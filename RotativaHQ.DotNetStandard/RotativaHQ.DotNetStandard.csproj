@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;net45;net46</TargetFrameworks>
+    <TargetFrameworks>netcoreapp2.0;net45;net46</TargetFrameworks>
     <PackageId>RotativaHQ</PackageId>
     <PackageVersion>2.0.0-beta</PackageVersion>
     <Authors>Giorgio Bozio</Authors>
@@ -23,7 +23,7 @@
     <DocumentationFile>RotativaHQ.DotNetStandard.xml</DocumentationFile>
   </PropertyGroup>
 
-  <PropertyGroup Condition=" '$(TargetFramework)' == 'netstandard2.0'">
+  <PropertyGroup Condition=" '$(TargetFramework)' == 'netcoreapp2.0'">
 	  <DefineConstants>NETCORE;NETSTANDARD;NETSTANDARD2_0</DefineConstants>
   </PropertyGroup>
 
@@ -66,7 +66,7 @@
     <PackageReference Include="Newtonsoft.Json" version="4.5.11" />
   </ItemGroup>
 
-  <ItemGroup Condition="'$(TargetFramework)'=='netstandard2.0'">
+  <ItemGroup Condition="'$(TargetFramework)'=='netcoreapp2.0'">
     <PackageReference Include="Microsoft.AspNetCore" Version="2.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.0.0" />
   </ItemGroup>

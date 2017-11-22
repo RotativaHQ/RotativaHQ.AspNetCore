@@ -193,7 +193,7 @@
             Page orientation.
             </summary>
         </member>
-        <member name="M:RotativaHQ.DotNetStandard.PdfHelper.CreateController``1(System.Web.Routing.RouteData)">
+        <member name="M:RotativaHQ.DotNetStandard.PdfHelper.CreateController``1(Microsoft.AspNetCore.Routing.RouteData)">
             <summary>
             Creates an instance of an MVC controller from scratch 
             when no existing ControllerContext is present       
@@ -285,6 +285,4 @@
             <returns>Command line parameter that can be directly passed to wkhtmltopdf binary.</returns>
         </member>
     </members>
-</doc>
-
 </doc>
