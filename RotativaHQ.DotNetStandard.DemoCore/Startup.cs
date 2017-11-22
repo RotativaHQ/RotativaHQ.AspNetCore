@@ -46,7 +46,7 @@ namespace RotativaHQ.DotNetStandard.DemoCore
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
 
-            RotativaHqConfiguration.SetRotativaHqApiKey("b4301d1a95c2492b9b3fbacf380fbf55");
+            RotativaHqConfiguration.SetRotativaHqApiKey("<YOUR KEY>");
             RotativaHqConfiguration.SetRotativaHqUrl("https://eunorth.rotativahq.com");
         }
     }
