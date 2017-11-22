@@ -5,7 +5,6 @@ using System.IO;
 using System.IO.Compression;
 using System.Linq;
 using System.Net;
-using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -281,17 +280,17 @@ namespace RotativaHQ.DotNetStandard
             { /* TODO: Trace something */ }
             if (stringContent == string.Empty)
             {
-                using (var webClient = new HttpClient())
+                using (var webClient = new WebClient())
                 {
                     try
                     {
                         if (path.StartsWith("http") || path.StartsWith("//"))
                         {
-                            stringContent = await webClient.GetStringAsync(path);
+                            stringContent = webClient.DownloadString(new Uri(path));
                         }
                         else
                         {
-                            stringContent = await webClient.GetStringAsync(webRoot + path);
+                            stringContent = webClient.DownloadString(webRoot + path);
                         }
                     }
                     catch (WebException wex)
@@ -321,17 +320,17 @@ namespace RotativaHQ.DotNetStandard
             }
             if (content == null)
             {
-                using (var webClient = new HttpClient())
+                using (var webClient = new WebClient())
                 {
                     try
                     {
                         if (path.StartsWith("http") || path.StartsWith("//"))
                         {
-                            content = await webClient.GetByteArrayAsync(path);
+                            content = await webClient.DownloadDataTaskAsync(path);
                         }
                         else
                         {
-                            content = await webClient.GetByteArrayAsync(webRoot + path);
+                            content = await webClient.DownloadDataTaskAsync(webRoot + path);
                         }
                     }
                     catch (Exception ex)
