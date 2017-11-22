@@ -1,6 +1,6 @@
 using System;
 
-namespace RotativaHQ.DotNetStandard.DemoCore.Models
+namespace RotativaHQ.AspNetCore.DemoCore.Models
 {
     public class ErrorViewModel
     {

@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\RotativaHQ.DotNetStandard\RotativaHQ.DotNetStandard.csproj" />
+    <ProjectReference Include="..\RotativaHQ.AspNetCore\RotativaHQ.AspNetCore.csproj" />
   </ItemGroup>
 
 </Project>

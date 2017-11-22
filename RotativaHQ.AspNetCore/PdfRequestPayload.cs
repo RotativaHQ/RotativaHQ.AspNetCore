@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RotativaHQ.DotNetStandard
+namespace RotativaHQ.AspNetCore
 {
     [ProtoContract]
     public class PdfRequestPayloadV2

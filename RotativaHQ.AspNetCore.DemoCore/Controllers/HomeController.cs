@@ -4,9 +4,9 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using RotativaHQ.DotNetStandard.DemoCore.Models;
+using RotativaHQ.AspNetCore.DemoCore.Models;
 
-namespace RotativaHQ.DotNetStandard.DemoCore.Controllers
+namespace RotativaHQ.AspNetCore.DemoCore.Controllers
 {
     public class HomeController : Controller
     {

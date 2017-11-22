@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace RotativaHQ.DotNetStandard
+namespace RotativaHQ.AspNetCore
 {
     public static class RotativaHqConfiguration
     {

@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace RotativaHQ.DotNetStandard.DemoCore
+namespace RotativaHQ.AspNetCore.DemoCore
 {
     public class Startup
     {

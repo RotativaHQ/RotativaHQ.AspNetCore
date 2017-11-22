@@ -6,7 +6,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RotativaHQ.DotNetStandard
+namespace RotativaHQ.AspNetCore
 {
     public class Margins
     {
