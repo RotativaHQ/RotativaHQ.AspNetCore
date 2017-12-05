@@ -391,7 +391,7 @@ namespace RotativaHQ.AspNetCore
             var response = PrepareResponse(context.HttpContext.Response);
 
             //response.OutputStream.Write(fileContent, 0, fileContent.Length);
-            response.Redirect(fileUrl, true);
+            response.Redirect(fileUrl, false);
         }
     }
 }
