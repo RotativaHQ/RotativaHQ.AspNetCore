@@ -34,8 +34,8 @@ namespace RotativaHQ.AspNetCore
             //    throw new InvalidOperationException(
             //        "Can't create Controller Context if no active HttpContext instance is available.");
 
-            //if (routeData == null)
-            //    routeData = new RouteData();
+            if (routeData == null)
+                routeData = new RouteData();
 
             // add the controller routing if not existing
             if (!routeData.Values.ContainsKey("controller") && !routeData.Values.ContainsKey("Controller"))
@@ -55,7 +55,7 @@ namespace RotativaHQ.AspNetCore
         //}
 
         public static Task<string> GetPdfUrl(
-            string view, object model = null, string filename = null, string switches = null, string headerView = null, string footerView = null)
+            string view, ControllerContext controllerContext, object model = null, string filename = null, string switches = null, string headerView = null, string footerView = null)
         {
             var viewAsPdf = new ViewAsPdf(view, model)
             {
@@ -69,8 +69,8 @@ namespace RotativaHQ.AspNetCore
             //if (string.IsNullOrEmpty(footerView) == false)
             //    viewAsPdf.FooterView = footerView;
 
-            var dummyController = CreateController<DummyPdfController>();
-            var pdfUri = viewAsPdf.BuildPdf(dummyController.ControllerContext);
+            //var dummyController = CreateController<DummyPdfController>();
+            var pdfUri = viewAsPdf.BuildPdf(controllerContext);
             return pdfUri;
 
         }

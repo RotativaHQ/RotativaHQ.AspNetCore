@@ -4,9 +4,9 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using RotativaHQ.AspNetCore.DemoCore.Models;
+using RotativaHQ.AspNetCore.DemoApp.Models;
 
-namespace RotativaHQ.AspNetCore.DemoCore.Controllers
+namespace RotativaHQ.AspNetCore.DemoApp.Controllers
 {
     public class HomeController : Controller
     {
@@ -19,13 +19,15 @@ namespace RotativaHQ.AspNetCore.DemoCore.Controllers
         {
             ViewData["Message"] = "Your application description page.";
 
-            return new ViewAsPdf();
+            return View();
         }
 
-        public IActionResult Contact()
+        public async Task<IActionResult> Contact()
         {
             ViewData["Message"] = "Your contact page.";
-            //var pdf = PdfHelper.GetPdfUrl("~/Views/Home/Contact");
+//            var t = await PdfHelper.GetPdfUrl("~/Views/Home/Contact.cshtml", this.ControllerContext);
+
+            var t = await PdfHelper.GetPdfUrl("", this.ControllerContext);
             return View();
         }
 
