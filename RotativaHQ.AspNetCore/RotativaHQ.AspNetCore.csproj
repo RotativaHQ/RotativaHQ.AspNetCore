@@ -3,20 +3,23 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <PackageId>RotativaHQ.AspNetCore</PackageId>
-    <PackageVersion>1.1.1</PackageVersion>
+    <PackageVersion>1.2.0</PackageVersion>
     <Authors>Giorgio Bozio</Authors>
     <Description>RotativaHQ client for Asp.Net Core</Description>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
-    <PackageReleaseNotes>First release</PackageReleaseNotes>
-    <Copyright>Copyright 2017 (c) Viva Software di Bozio Giorgio. All rights reserved.</Copyright>
+    <PackageReleaseNotes>Working PdfHelper methods</PackageReleaseNotes>
+    <Copyright>Copyright 2018 (c) Viva Software di Bozio Giorgio. All rights reserved.</Copyright>
     <PackageTags>PDF AspNetCore</PackageTags>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <NeutralLanguage />
-    <Version>1.1.1</Version>
+    <Version>1.2.0</Version>
+    <PackageProjectUrl>http://www.rotativahq.com/</PackageProjectUrl>
+    <PackageLicenseUrl>http://www.rotativahq.com/register</PackageLicenseUrl>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>bin\Debug\netstandard2.0\RotativaHQ.DotNetStandard.xml</DocumentationFile>
+    <DocumentationFile>bin\Debug\netstandard2.0\RotativaHQ.AspNetCore.xml</DocumentationFile>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">

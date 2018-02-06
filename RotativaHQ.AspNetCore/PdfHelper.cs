@@ -54,8 +54,8 @@ namespace RotativaHQ.AspNetCore
         //    return pdfUri;
         //}
 
-        public static Task<string> GetPdfUrl(
-            string view, ControllerContext controllerContext, object model = null, string filename = null, string switches = null, string headerView = null, string footerView = null)
+        public static async Task<string> GetPdfUrl(
+            ControllerContext controllerContext, string view = null, object model = null, string filename = null, string switches = null, string headerView = null, string footerView = null)
         {
             var viewAsPdf = new ViewAsPdf(view, model)
             {
@@ -63,14 +63,13 @@ namespace RotativaHQ.AspNetCore
                 FileName = filename
             };
 
-            //if (string.IsNullOrEmpty(headerView) == false)
-            //    viewAsPdf.HeaderView = headerView;
+            if (string.IsNullOrEmpty(headerView) == false)
+                viewAsPdf.HeaderView = headerView;
 
-            //if (string.IsNullOrEmpty(footerView) == false)
-            //    viewAsPdf.FooterView = footerView;
+            if (string.IsNullOrEmpty(footerView) == false)
+                viewAsPdf.FooterView = footerView;
 
-            //var dummyController = CreateController<DummyPdfController>();
-            var pdfUri = viewAsPdf.BuildPdf(controllerContext);
+            var pdfUri = await viewAsPdf.BuildPdf(controllerContext);
             return pdfUri;
 
         }
@@ -87,43 +86,18 @@ namespace RotativaHQ.AspNetCore
         //    }
         //}
 
-        public static byte[] GetPdf(
-            string view, object model = null, string filename = null, string switches = null, 
+        public static async Task<byte[]> GetPdf(
+            ControllerContext controllerContext, string view = null, object model = null, string filename = null, string switches = null, 
             string headerView = null, string footerView = null)
         {
-            throw new NotImplementedException();
-            //var pdfUri = GetPdfUrl(view, model, filename, switches, headerView, footerView);
+            var pdfUri = await GetPdfUrl(controllerContext, view, model, filename, switches, headerView, footerView);
 
-            //using (var client = new WebClient())
-            //{
-            //    var pdf = client.DownloadData(pdfUri);
-            //    return pdf;
-            //}
+            using (var client = new WebClient())
+            {
+                var pdf = await client.DownloadDataTaskAsync(pdfUri);
+                return pdf;
+            }
         }
-
-        public static HttpResponseMessage CreatePdfResponse(this HttpRequestMessage request, 
-            string view, object model = null, string filename = null, string switches = null,
-             string headerView = null, string footerView = null)
-        {
-            throw new NotImplementedException();
-            //var pdfUri = GetPdfUrl(view, model, filename, switches, headerView, footerView);
-            //HttpResponseMessage result = new HttpResponseMessage(HttpStatusCode.OK);
-            //using (var client = new WebClient())
-            //{
-            //    var pdf = client.DownloadData(pdfUri);
-            //    result.Content = new ByteArrayContent(pdf);
-            //    result.Content.Headers.ContentType = new MediaTypeHeaderValue("application/pdf");
-            //    if (!string.IsNullOrEmpty(filename))
-            //    {
-            //        result.Content.Headers.ContentDisposition = new ContentDispositionHeaderValue("attachment")
-            //        {
-            //            FileName = filename
-            //        };
-            //    }
-            //    return result;
-            //}
-        }
-
         
     }
 }
