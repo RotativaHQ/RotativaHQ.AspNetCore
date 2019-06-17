@@ -46,7 +46,7 @@ namespace RotativaHQ.AspNetCore.DemoApp
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
 
-            RotativaHqConfiguration.SetRotativaHqApiKey("b4301d1a95c2492b9b3fbacf380fbf55");
+            RotativaHqConfiguration.SetRotativaHqApiKey("api key");
             RotativaHqConfiguration.SetRotativaHqUrl("https://eunorth.rotativahq.com");
             //RotativaHqConfiguration.SetRotativaHqUrl("http://localhost.fiddler:1282");
             //RotativaHqConfiguration.SetRotativaHqUrl("http://ee7c4b23275a4e30942aec403db8b5e4.cloudapp.net");
