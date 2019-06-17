@@ -1,20 +1,21 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <PackageId>RotativaHQ.AspNetCore</PackageId>
-    <PackageVersion>1.2.0</PackageVersion>
+    <PackageVersion>1.2.1</PackageVersion>
     <Authors>Giorgio Bozio</Authors>
     <Description>RotativaHQ client for Asp.Net Core</Description>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
-    <PackageReleaseNotes>Working PdfHelper methods</PackageReleaseNotes>
-    <Copyright>Copyright 2018 (c) Viva Software di Bozio Giorgio. All rights reserved.</Copyright>
+    <PackageReleaseNotes>Header and Footer fix</PackageReleaseNotes>
+    <Copyright>Copyright 2019 (c) Viva Software di Bozio Giorgio. All rights reserved.</Copyright>
     <PackageTags>PDF AspNetCore</PackageTags>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <NeutralLanguage />
-    <Version>1.2.0</Version>
-    <PackageProjectUrl>http://www.rotativahq.com/</PackageProjectUrl>
-    <PackageLicenseUrl>http://www.rotativahq.com/register</PackageLicenseUrl>
+    <Version>1.2.1</Version>
+    <PackageProjectUrl>https://rotativa.io/</PackageProjectUrl>
+    <PackageLicenseUrl>https://rotativa.io/Subscriptions/New</PackageLicenseUrl>
+    <RepositoryUrl>https://github.com/RotativaHQ/RotativaHQ.AspNetCore</RepositoryUrl>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

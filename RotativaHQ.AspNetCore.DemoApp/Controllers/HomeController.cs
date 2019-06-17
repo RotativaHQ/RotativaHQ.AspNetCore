@@ -22,7 +22,11 @@ namespace RotativaHQ.AspNetCore.DemoApp.Controllers
             ViewData["Message"] = "Your application description page.";
            
 
-            return View();
+            return new ViewAsPdf()
+            {
+                HeaderView = "Header",
+                FooterView = "Footer"
+            };
         }
 
         public async Task<IActionResult> Contact()

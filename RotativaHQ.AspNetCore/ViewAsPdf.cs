@@ -222,10 +222,10 @@ namespace RotativaHQ.AspNetCore
         }
 
 
-        protected virtual ViewEngineResult GetView(ActionContext context, string viewName, string masterName)
+        protected virtual ViewEngineResult GetView(ActionContext context, string viewName, string masterName, bool isMainPage = true)
         {
             var engine = context.HttpContext.RequestServices.GetService(typeof(ICompositeViewEngine)) as ICompositeViewEngine;
-            return engine.FindView(context, ViewName, true);
+            return engine.FindView(context, viewName, isMainPage);
         }
 
         protected async Task<string> CallTheDriver<TModel>(ActionContext context, TModel model)
@@ -286,7 +286,7 @@ namespace RotativaHQ.AspNetCore
             {
                 using (var hw = new StringWriter())
                 {
-                    ViewEngineResult headerViewResult = GetView(context, HeaderView, MasterName);
+                    ViewEngineResult headerViewResult = GetView(context, HeaderView, MasterName, isMainPage: false);
                     if (headerViewResult != null)
                     {
                         var viewContext = new ViewContext(
@@ -313,7 +313,7 @@ namespace RotativaHQ.AspNetCore
             {
                 using (var hw = new StringWriter())
                 {
-                    ViewEngineResult footerViewResult = GetView(context, FooterView, MasterName);
+                    ViewEngineResult footerViewResult = GetView(context, FooterView, MasterName, isMainPage: false);
                     if (footerViewResult != null)
                     {
                         var viewContext = new ViewContext(
