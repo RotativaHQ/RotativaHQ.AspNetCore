@@ -22,7 +22,7 @@ namespace RotativaHQ.AspNetCore.DemoApp.Controllers
             ViewData["Message"] = "Your application description page.";
            
 
-            return new ViewAsPdf()
+            return new ViewAsPdf("/Views/Home/About.cshtml")
             {
                 HeaderView = "Header",
                 FooterView = "Footer"

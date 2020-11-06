@@ -224,8 +224,28 @@ namespace RotativaHQ.AspNetCore
 
         protected virtual ViewEngineResult GetView(ActionContext context, string viewName, string masterName, bool isMainPage = true)
         {
+            //var engine = context.HttpContext.RequestServices.GetService(typeof(ICompositeViewEngine)) as ICompositeViewEngine;
+            //return engine.FindView(context, viewName, isMainPage);
             var engine = context.HttpContext.RequestServices.GetService(typeof(ICompositeViewEngine)) as ICompositeViewEngine;
-            return engine.FindView(context, viewName, isMainPage);
+
+            var getViewResult = engine.GetView(executingFilePath: null, viewPath: viewName, isMainPage: true);
+            if (getViewResult.Success)
+            {
+                return getViewResult;
+            }
+
+            var findViewResult = engine.FindView(context, viewName, isMainPage: true);
+            if (findViewResult.Success)
+            {
+                return findViewResult;
+            }
+
+            var searchedLocations = getViewResult.SearchedLocations.Concat(findViewResult.SearchedLocations);
+            var errorMessage = string.Join(
+                Environment.NewLine,
+                new[] { $"Unable to find view '{viewName}'. The following locations were searched:" }.Concat(searchedLocations));
+
+            throw new InvalidOperationException(errorMessage);
         }
 
         protected async Task<string> CallTheDriver<TModel>(ActionContext context, TModel model)
