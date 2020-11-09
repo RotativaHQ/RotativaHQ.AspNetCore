@@ -3,19 +3,20 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <PackageId>RotativaHQ.AspNetCore</PackageId>
-    <PackageVersion>1.2.1</PackageVersion>
+    <PackageVersion>1.2.2-beta</PackageVersion>
     <Authors>Giorgio Bozio</Authors>
     <Description>RotativaHQ client for Asp.Net Core</Description>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
-    <PackageReleaseNotes>Header and Footer fix</PackageReleaseNotes>
+    <PackageReleaseNotes>Get View fix</PackageReleaseNotes>
     <Copyright>Copyright 2019 (c) Viva Software di Bozio Giorgio. All rights reserved.</Copyright>
     <PackageTags>PDF AspNetCore</PackageTags>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <NeutralLanguage />
-    <Version>1.2.1</Version>
+    <Version>1.2.2-beta</Version>
     <PackageProjectUrl>https://rotativa.io/</PackageProjectUrl>
-    <PackageLicenseUrl>https://rotativa.io/Subscriptions/New</PackageLicenseUrl>
+    <PackageLicense>MIT</PackageLicense>
     <RepositoryUrl>https://github.com/RotativaHQ/RotativaHQ.AspNetCore</RepositoryUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
